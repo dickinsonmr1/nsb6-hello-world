@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using NServiceBus;
 using Shared;
+
+// https://docs.particular.net/samples/step-by-step/
 
 namespace Client
 {
@@ -42,8 +41,7 @@ namespace Client
             }
             finally
             {
-                await endpointInstance.Stop()
-                    .ConfigureAwait(false);
+                await endpointInstance.Stop().ConfigureAwait(false);
             }
         }
 
