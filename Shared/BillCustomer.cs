@@ -3,9 +3,8 @@ using NServiceBus;
 
 namespace Shared
 {
-    public class PlaceOrder : ICommand
+    public class BillCustomer : ICommand
     {
         public Guid OrderId { get; set; }
-        public string Product { get; set; }
     }
 }

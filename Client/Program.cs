@@ -60,7 +60,7 @@ namespace Client
 
                 var id = Guid.NewGuid();
 
-                var placeOrder = new PlaceOrder { Product = "New shoes", Id = id };
+                var placeOrder = new PlaceOrder { Product = "New shoes", OrderId = id };
 
                 await endpointInstance.Send("Samples.StepByStep.Server", placeOrder);
                 Console.WriteLine($"Sent a PlaceOrder message with id: {id:N}");

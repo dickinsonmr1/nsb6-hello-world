@@ -2,11 +2,10 @@
 using System.Threading.Tasks;
 using NServiceBus;
 
-namespace Delivery
+namespace Billing
 {
     class Program
     {
-
         static void Main()
         {
             AsyncMain().GetAwaiter().GetResult();
@@ -14,8 +13,8 @@ namespace Delivery
 
         static async Task AsyncMain()
         {
-            Console.Title = "Samples.StepByStep.Delivery";
-            var endpointConfiguration = new EndpointConfiguration("Samples.StepByStep.Delivery");
+            Console.Title = "Samples.StepByStep.Biling";
+            var endpointConfiguration = new EndpointConfiguration("Samples.StepByStep.Billing");
             endpointConfiguration.UseSerialization<JsonSerializer>();
             endpointConfiguration.EnableInstallers();
             endpointConfiguration.UsePersistence<InMemoryPersistence>();

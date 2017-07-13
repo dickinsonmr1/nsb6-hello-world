@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using NServiceBus;
 using NServiceBus.Logging;
 using Shared;
@@ -15,7 +14,7 @@ namespace Delivery
             log.Info($"Order placed:{message.OrderId}");
             log.Info($"Sending: DeliverOrder for Order Id: {message.OrderId}");
 
-            return context.Send(new DeliverOrder { OrderId = Guid.NewGuid() });
+            return context.Send(new DeliverOrder { OrderId = message.OrderId });
         }
     }
 }

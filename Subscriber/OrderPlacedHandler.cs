@@ -5,9 +5,9 @@ using Shared;
 
 namespace Subscriber
 {
-    public class OrderCreatedHandler : IHandleMessages<OrderPlaced>
+    public class OrderPlacedHandler : IHandleMessages<OrderPlaced>
     {
-        static ILog log = LogManager.GetLogger<OrderCreatedHandler>();
+        private static ILog log = LogManager.GetLogger<OrderPlacedHandler>();
 
         public Task Handle(OrderPlaced message, IMessageHandlerContext context)
         {

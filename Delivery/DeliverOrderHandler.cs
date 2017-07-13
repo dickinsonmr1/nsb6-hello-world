@@ -13,8 +13,7 @@ namespace Delivery
             log.Info($"@@@ DELIVERING ORDER: {message.OrderId} @@@");
             log.Info($"Publishing: OrderDelivered for Order Id: {message.OrderId}");
 
-            var orderPlaced = new OrderDelivered() { OrderId = message.OrderId };
-            return context.Publish(orderPlaced);
+            return context.Publish(new OrderDelivered { OrderId = message.OrderId });
         }
     }
 }

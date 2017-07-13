@@ -11,10 +11,10 @@ namespace Server
 
         public Task Handle(PlaceOrder message, IMessageHandlerContext context)
         {
-            log.Info($"Order for Product:{message.Product} placed with id: {message.Id}");
-            log.Info($"Publishing: OrderPlaced for Order Id: {message.Id}");
+            log.Info($"Order for Product:{message.Product} placed with id: {message.OrderId}");
+            log.Info($"Publishing: OrderPlaced for Order Id: {message.OrderId}");
 
-            var orderPlaced = new OrderPlaced { OrderId = message.Id };
+            var orderPlaced = new OrderPlaced { OrderId = message.OrderId };
             return context.Publish(orderPlaced);
         }
     }
